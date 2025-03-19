@@ -58,7 +58,7 @@ function App() {
   
  }
 
- const handleReset=(){
+ const handleReset=()=>{
   setPrinciple("")
   setIsPrinciple(true)
   setRate("")
@@ -84,7 +84,7 @@ function App() {
       <h6>Calculate your simple interest Easily</h6>
       <div className='mb-3'>
         <div className='container bg-success text-center p-5 rounded'>
-          <h1>₹0</h1>
+          <h1>₹{interest}</h1>
           <h6>Total Simple interest</h6>
           
 
@@ -96,7 +96,7 @@ function App() {
           }
         </div>
         <div className="mb-3">
-        <TextField name='rate' id="outlined-basic" label="Rate of interest" variant="outlined" className='w-100' onChange={(e)=>validate(e)}/>
+        <TextField name='rate' id="outlined-basic" value={rate} label="Rate of interest" variant="outlined" className='w-100' onChange={(e)=>validate(e)}/>
         { isRate==false && <span className='text-danger'>*Invalid input</span>
 
 }
@@ -104,7 +104,7 @@ function App() {
 
         </div>
         <div className="mb-3">
-        <TextField name='year' id="outlined-basic" label="Year (Yr)" variant="outlined" className='w-100' onChange={(e)=>validate(e)}/>
+        <TextField name='year' id="outlined-basic" label="Year (Yr)" value={year} variant="outlined" className='w-100' onChange={(e)=>validate(e)}/>
         { isYear==false && <span className='text-danger'>*Invalid input</span>
 
 }
